@@ -1,4 +1,4 @@
-# qlanguageselector
+# QLanguageSelector
 It is a portable component that makes it possible to add and switch language resources of an application by users.
 
 ## Summary
