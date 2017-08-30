@@ -43,13 +43,7 @@ public:
      * @param path: The path of the directory where the qm file is stored
      */
     QLanguageSelector(QString prefix, QString path="translations/");
-    /**
-     * @brief resetTranslator
-     * @param languageId: language name in English
-     *
-     * Replace the language resources of the application.
-     */
-    void resetTranslator(QString languageId);
+
     QString language() { return m_uiLanguage; }
     QString getApplicationFilePath(QString subFilePath);
 
@@ -85,13 +79,22 @@ public:
 signals:
     /**
      * @brief languageChanged
-     * @param language
+     * @param languageId
      *
      * Called after the language resource of the application has been replaced.
      * To change the language of Widgets other than QMainWindow
      *  you should receive this signal in your slot.
      */
-    void languageChanged(QString language);
+    void languageChanged(QString languageId);
+
+public slots:
+    /**
+     * @brief resetTranslator
+     * @param languageId: language name in English
+     *
+     * Replace the language resources of the application.
+     */
+    void resetTranslator(QString languageId);
 
 private:
     QString m_uiLanguage;
