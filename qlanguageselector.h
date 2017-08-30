@@ -45,7 +45,6 @@ public:
     QLanguageSelector(QString prefix, QString path="translations/");
 
     QString language() { return m_uiLanguage; }
-    QString getApplicationFilePath(QString subFilePath);
 
     /**
      * @brief initializeMenu
@@ -106,7 +105,6 @@ private:
     QStringList m_languageList;
 
     void initialize();
-    QString getLanguageIniPath();
     void clearLanguageMenus();
 };
 

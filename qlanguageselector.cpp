@@ -39,7 +39,7 @@ void QLanguageSelector::resetTranslator(QString languageId)
     }
     m_translator = new QTranslator;
     bool exist = m_translator->load(QLocale(info.Code),
-                                 m_path, m_prefix, qApp->applicationDirPath());
+                                 "", m_prefix, m_path);
     if(exist) {
         qApp->installTranslator(m_translator);
     } else {
@@ -49,15 +49,10 @@ void QLanguageSelector::resetTranslator(QString languageId)
     emit languageChanged(info.Caption);
 }
 
-QString QLanguageSelector::getApplicationFilePath(QString subFilePath)
-{
-    return QDir::toNativeSeparators(QString("%1/%2").arg(qApp->applicationDirPath()).arg(subFilePath));
-}
-
 void QLanguageSelector::initialize()
 {
-    QString inipath = getLanguageIniPath();
-    QSettings settings(getLanguageIniPath(), QSettings::IniFormat, this);
+    QString inipath = QString("%1/%2").arg(m_path).arg(LANGUAGES_INI);
+    QSettings settings(inipath, QSettings::IniFormat, this);
     settings.setIniCodec(QTextCodec::codecForName("UTF-8"));
 
     QStringList groups = settings.childGroups();
@@ -72,11 +67,6 @@ void QLanguageSelector::initialize()
         m_languageList << info.Caption;
         settings.endGroup();
     }
-}
-
-QString QLanguageSelector::getLanguageIniPath()
-{
-    return getApplicationFilePath(m_path + LANGUAGES_INI);
 }
 
 void QLanguageSelector::clearLanguageMenus()
