@@ -2,9 +2,9 @@
 
 QLanguageSelector::QLanguageSelector(QString prefix, QString path)
     : QObject(nullptr)
-    , m_prefix(prefix)
-    , m_path(path)
     , m_translator(nullptr)
+    , m_path(path)
+    , m_prefix(prefix)
 {
     initialize();
 }
