@@ -2,9 +2,7 @@
 #define QLANGUAGESELECTOR_H
 
 #include <QtGui>
-#if QT_VERSION_MAJOR >= 5
-#  include <QtWidgets>
-#endif
+#include <QtWidgets>
 
 #ifndef LANGUAGES_INI
   #define LANGUAGES_INI "languages.ini"
