@@ -2,7 +2,11 @@
 #define QLANGUAGESELECTOR_H
 
 #include <QtGui>
-#include <QtWidgets>
+#if QT_VERSION_MAJOR >= 5
+#  include <QtWidgets>
+#endif
+
+#include "qtexttranslator.h"
 
 #ifndef LANGUAGES_INI
   #define LANGUAGES_INI "languages.ini"
@@ -13,9 +17,34 @@
 
 struct LanguageInfo
 {
+    /**
+     * @brief Code
+     * Code page for the language. Usually, e.g. it may be 'en', or 'en_US'
+     */
     QString Code;
+    /**
+     * @brief Caption
+     * The language name which is human-readarable. e.g. 'English', 'Chinese(Simplified)'
+     */
     QString Caption;
+    /**
+     * @brief Qm
+     * The translation file name which is Qt standard(qm format).
+     * If Qm is empty, and ForseUseText=false, this section will be default language for the application.
+     */
     QString Qm;
+    /**
+     * @brief TextFile
+     * The translation file name which is text(Internally, ini) format.
+     * Users can edit the files.
+     * And QLanguageSelector will load and change all 'tr' words every time when the menu is selected.
+     */
+    QString TextFile;
+    /**
+     * @brief OpenTextEditor
+     * When user select the menu, open the 'TextFile' with a text editor, if the flag is true.
+     */
+    bool OpenTextEditor;
 };
 
 
@@ -43,6 +72,14 @@ public:
     QLanguageSelector(QString prefix, QString path="translations/");
 
     QString language() { return m_uiLanguage; }
+
+    /**
+     * @brief initialize
+     *
+     * Load language.ini and recognize the list of languages this application can switch.
+     * Besides the usual binary(.qm) format, it supports text format (TransConf) converted from TS(.ts) format.
+     */
+    void initialize(QString path="");
 
     /**
      * @brief initializeMenu
@@ -73,6 +110,12 @@ public:
      */
     LanguageInfo getSystemLanguageInfo();
 
+    void setForceUseText(bool force) { m_forceUseText = force; }
+    bool ForceUseText() const { return m_forceUseText; }
+    void copyLanguages(QMap<QString, LanguageInfo>& languages) { m_languages = languages; }
+    QMap<QString, LanguageInfo>& Languages() { return m_languages; }
+
+
 signals:
     /**
      * @brief languageChanged
@@ -83,6 +126,13 @@ signals:
      *  you should receive this signal in your slot.
      */
     void languageChanged(QString languageId);
+    /**
+     * @brief openTextEditorForLanguage
+     * @param info
+     *
+     * Called before the text translation file selected.
+     */
+    void openTextEditorForLanguage(LanguageInfo info);
 
 public slots:
     /**
@@ -96,13 +146,18 @@ public slots:
 private:
     QString m_uiLanguage;
     QTranslator *m_translator;
+    QTextTranslator *m_reversed;
     QString m_path;
     QString m_prefix;
+    QString m_reverseFile;
+    bool m_forceUseText;
+    bool m_textEditorOpened;
+    bool m_userSelecting;
+
     QMap<QString, LanguageInfo> m_languages;
     QList<QAction*> m_actions;
     QStringList m_languageList;
 
-    void initialize();
     void clearLanguageMenus();
 };
 
