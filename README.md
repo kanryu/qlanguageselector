@@ -118,7 +118,7 @@ If your project is written in qmake, you need a little twist, but automation is 
         $${PWD}/translations/qt_el.qm \
         $$[QT_INSTALL_TRANSLATIONS]/qt_zh_CN.qm \
 
-The entire project file to see: [QuickViewer.pro]()https://github.com/kanryu/quickviewer/blob/master/QuickViewer/QuickViewer.pro)
+The entire project file to see: [QuickViewer.pro](https://github.com/kanryu/quickviewer/blob/master/QuickViewer/QuickViewer.pro)
 
 ## License
 BSD-2
