@@ -88,6 +88,8 @@ text_109008=&Abrir Carpeta de Imagenes
 text_109009=&Historia
 ```
 
+Implementation example to see: (https://gist.github.com/kanryu/e935cd60afbd0f7f770755dd1113ff99)
+
 The *text_XXXXXX* part is automatically generated, so you can not convert perfectly with this single translation file. Always requires a **reverse translation** file.
 
 The part of *hintXXXXXX* can be written in the second argument of **tr()** function. However, Qt's translation file is clever, so if the character string of the first argument is the same but the annotation of the second argument is different, it becomes a different translation word, but since this library can **NOT** be distinguished, such description should not be done.
