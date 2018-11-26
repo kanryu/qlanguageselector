@@ -47,6 +47,9 @@ TextFile=YourLanguage.txt
 OpenTextEditor=true     <-- Set to true if you want to trigger an event to edit a text translation
 ...
 ```
+
+Implementation example to see: [languages.ini of QuickViewer](https://github.com/kanryu/quickviewer/blob/master/QuickViewer/translations/languages.ini)
+
 With the exception of the first QLanguageSelector group, the menu is displayed in this file in the order of the groups you described.
 
 The translated file may be either a normal qm format or a text format provided by this library.
