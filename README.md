@@ -89,7 +89,7 @@ text_109009=&Historia
 ...
 ```
 
-Implementation example to see: (https://gist.github.com/kanryu/e935cd60afbd0f7f770755dd1113ff99)
+Implementation example to see: [Japanese.txt](https://gist.github.com/kanryu/e935cd60afbd0f7f770755dd1113ff99)
 
 The *text_XXXXXX* part is automatically generated, so you can not convert perfectly with this single translation file. Always requires a **reverse translation** file.
 
