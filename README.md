@@ -86,6 +86,7 @@ text_109007=QuickViewer
 ;hint109008: A menu for displaying a dialog for selecting an image to be displayed
 text_109008=&Abrir Carpeta de Imagenes
 text_109009=&Historia
+...
 ```
 
 Implementation example to see: (https://gist.github.com/kanryu/e935cd60afbd0f7f770755dd1113ff99)
