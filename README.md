@@ -31,7 +31,7 @@ A list of translation files of your application is defined in language.ini. It h
 ForceUseText=false      <-- If you always use text-based translation, set it to true
 ReverseFile=Reverse.txt <-- The file name of the reverse translation file is described here
 [English]               <-- Language Group
-Code=en                 <-- Language Code(e.g. 'en' or 'en_US'
+Code=en                 <-- Language Code(e.g. 'en' or 'en_US')
 Caption=English         <-- Language name which is used on main menu
 Qm=                     <-- Qt based translation file name
 [Spanish]
