@@ -93,7 +93,7 @@ The part of *hintXXXXXX* can be written in the second argument of **tr()** funct
 
 ## Generate text based translation
 
-These translation files are automatically converted from the ts file of your application.
+These translation files are automatically converted from the ts files of your application.
 
 The conversion process can be described by qbs. It would be easy if you made the project with qbs.
 
