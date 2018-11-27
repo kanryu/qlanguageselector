@@ -30,14 +30,10 @@ A list of translation files of your application is defined in language.ini. It h
 [QLanguageSelector]
 ForceUseText=false      <-- If you always use text-based translation, set it to true
 ReverseFile=Reverse.txt <-- The file name of the reverse translation file is described here
-[English]               <-- Language Group
-Code=en                 <-- Language Code(e.g. 'en' or 'en_US')
-Caption=English         <-- Language name which is used on main menu
-Qm=                     <-- Qt based translation file name
-[Spanish]
-Code=es
-Caption=Spanish
-Qm=quickviewer_es.qm
+[Spanish]               <-- Language Group
+Code=es                 <-- Language Code(e.g. 'en' or 'en_US')
+Caption=Spanish         <-- Language name which is used on main menu
+Qm=quickviewer_es.qm    <-- Qt based translation file name
 TextFile=Spanish.txt    <-- Text based translation
 [YourLanguage]
 Code=
