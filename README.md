@@ -5,7 +5,7 @@ It is a portable component that makes it possible to add and switch language res
 
 ## Summary
 
-This library provides a mechanism for applications to make language changes by users.
+QLanguageSelector provides a mechanism for applications to make language changes by users.
 
 Each language is registered as a child QAction menu of QMenu specified.
 
@@ -54,7 +54,7 @@ Since QLanguageSelector reads language.ini at its initialization and generates Q
 
 ## Text based translations
 
-This library supports text based translation. It is an ini file of the following format. (For convenience of the user, it may be better not to have the extension **ini**)
+QLanguageSelector supports text based translation. It is an ini file of the following format. (For convenience of the user, it may be better not to have the extension **ini**)
 
 ```
 ; Language file was generated at Sun, 25 Nov 2018 21:09:55 +0900
