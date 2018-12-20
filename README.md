@@ -7,7 +7,7 @@ It is a portable component that makes it possible to add and switch language res
 
 QLanguageSelector provides a mechanism for applications to make language changes by users.
 
-Each language is registered as a child QAction menu of QMenu specified.
+Each language is automatically generated and registered as a child QAction menu of QMenu specified.
 
 Each language is described in the ini file (usually "translations/languages.ini").
 
