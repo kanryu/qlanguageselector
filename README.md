@@ -11,11 +11,11 @@ Each language is automatically generated and registered as a child QAction menu 
 
 Each language is described in the ini file (usually "translations/languages.ini").
 
-Allow users of the application to add new languages without changing the source code.
+Allow users of your application to add new languages without changing the source code.
 
-When the application user selects the Language Menu,
+When your application user selects the Language Menu,
  the QLanguageSelector automatically sets the new QTranslator
- to qApp and replaces the language resources of the application.
+ to qApp and replaces the language resources of your application.
 
 Eventually the languageChanged signal is emitted and you can handle additional change events.
 
