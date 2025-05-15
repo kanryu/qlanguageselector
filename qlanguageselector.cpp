@@ -71,7 +71,6 @@ void QLanguageSelector::initialize(QString path)
 {
     QString inipath = path.isEmpty() ? QString("%1/%2").arg(m_path).arg(LANGUAGES_INI) : path;
     QSettings settings(inipath, QSettings::IniFormat, this);
-    settings.setIniCodec(QTextCodec::codecForName("UTF-8"));
 
     QStringList groups = settings.childGroups();
     foreach(const QString g, groups) {

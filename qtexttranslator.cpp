@@ -6,7 +6,6 @@ QTextTranslator::QTextTranslator(QObject *parent, QString path, QTextTranslator 
 {
     m_reverse = reverse;
     QSettings settings(path, QSettings::IniFormat, this);
-    settings.setIniCodec(QTextCodec::codecForName("UTF-8"));
 
     // when initialized:
     // *this                                    *reverse
